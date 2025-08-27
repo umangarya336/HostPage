@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .success-container {
+            max-width: 600px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 40px;
+            color: white;
+        }
+
+        .success-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        .success-message {
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .transaction-details {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .transaction-details h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #6c757d;
+        }
+
+        .detail-value {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+
+        @media (max-width: 768px) {
+            .success-container {
+                padding: 40px 20px;
+            }
+            
+            .success-title {
+                font-size: 2rem;
+            }
+            
+            .detail-row {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">✓</div>
+        <h1 class="success-title">Payment Successful!</h1>
+        <p class="success-message">
+            Your payment has been processed successfully. Thank you for your subscription!
+            You will receive a confirmation email shortly.
+        </p>
+        
+        <div class="button-group">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Update transaction details
+        document.getElementById('txnid').textContent = urlParams.get('txnid') || 'N/A';
+        document.getElementById('amount').textContent = '₹' + (urlParams.get('amount') || 'N/A');
+        document.getElementById('plan').textContent = urlParams.get('productinfo') || 'N/A';
+        
+        // Log success for debugging
+        console.log('Payment Success Page Loaded');
+        console.log('Transaction ID:', urlParams.get('txnid'));
+        console.log('Amount:', urlParams.get('amount'));
+        console.log('Plan:', urlParams.get('productinfo'));
+    </script>
+</body>
+</html>
