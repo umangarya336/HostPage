@@ -414,11 +414,11 @@
             // Generate transaction ID using current timestamp
             const txnid = 'mtx' + new Date().getTime();
             
-            // Define constants
-            // const key = 'O15vkB';
-            // const salt = 'LU1EhObh';
-            const key = 'o0dEBA';
-            const salt = 'MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCkSPxOFbuWBE4wkBmsM8sZs6ybZbbqCa8FRnOo78TdaRPb13npsNyKjIPV9bw9tDtnhi6C0t8Mx6uE5o7j/vxVP1P0Gjsuvp91GGTm93hkljxdW+UU289yBSH+dOGvlo0JmS1Lk8qw76dba8VD+To3/7D1a7g7no4rMM+hJFyqWHocyZ0pvqJ0O9xRm4gxcmfghvyuyun3ZrNJeKgMGRnsuFzCKwh0BFsQzGn76jgk2tT2wk3rZNI5NZuf+mIFRPXFehKBNAcoBj4O2gCW0m/39OaC25Ahu5o6RLMjj+CB/CAKiPIbfysDvZ1i57Y0eFgKs34BHKuXfpZm/fyZi/krAgMBAAECggEAEGYwuWK1/P2lCHf5+BSbe49R9ZkrryUUUYR82ypEDo4Eq3dQ9iDvgu0P4/XJuqcZHvZoAismlNIBrxyMuvmjGqddrApKShpBNKEgwWWGoRPWJsOblH90r78Pa6UjOjHfFkwyF09DdnIV1KxnXqesRhbCBV2hYGItcuZGc6F7lo1hdrlMJ9hl79Q/w/Fgo8ENqnbudKHigYZry/xiCMT9vdtsIdHmNdL3RUtpaDc3zhCjcLYXAOMdoXuurGqnsix+Cl6YPmZbMtQeN6G5w6pZc5U/pDQH7gwqElAFAxzNJxsqcaTnabLmR9d2NaX7K6+bDwIpZTijQkYY10TBC9cPYQKBgQDWtK6hoGSUQ948uynha2plObIrje5sgq4r9aKToe/RjAGW8UQJrUNT+2UnBQ8TOazc8RSB9fIbZZROD0cUvzrIyFUTesRyJLLNzeGiW2KO4bJwioLfgCyQlWh+RU8T2Nl8M6lUe+dytvXjiyXXWFu8p7Inj+X+5eCU+RqDYaliswKBgQDD4caAdifRmqPrfuuQMHtQswRdeNDw1ue/gTjY97MpvlmPr/PAQTC+wgaoLHEssd+RcbNxXqEus/XSS9rSDercqCAertXjYv2e6Jzm02ub+59j1Zw55vmMt3u76B8iwRJM72U/mvZ/c5vleGzEG1F75pjDBJUesCfItohw0iNrqQKBgH74yVFyDikUXcgik2jo4jnMvg492GM5gREkKaoPGUkd+A6wzaC/Y1K2GCLUPg8Li6v5sjwNG8mR7/ud01Z0pKn6tz1W2/f4tfk5qRcf3hBLbwBZGX5dSX2TrgEGsfY1xqBJ2PjKcZyIkK+pKY7JhS7zKUt2MPjmL0NKcaCCz+47AoGAGUPUu5sB1coxXF2ZepaWQTll1byQjo/ZglzjfTCtvjOcD6ltMh32cJRMEYLx8gbbREI7F+NRvNlfWomIJtG+uklBI1P/qH2LIuTz393jIlJZI6JYrSs6gsjjv7/XzD7E4oF6OLL/Gj9KG1XmCYFQiD+c8oJzzWqBJyVMAelIwkkCgYA19n9c1gbIqRm7BK+BmDl8GOwR4BvxnW8QlnQ/M3sHMth/WimjyB/JU7nkTX7E6KJnD3KuzH79sSHE2xCGQE0Bo4S2N689qK5+yzQ+GD8nPwfVUFNXgHseNcifXTF/aoqFiByCWOPx51R2PC/Kcy+cURgSBlOIuFJNXzbJjsaSBg==';
+            Define constants
+            const key = 'O15vkB';
+            const salt = 'LU1EhObh';
+            // const key = 'o0dEBA';
+            // const salt = 'MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCkSPxOFbuWBE4wkBmsM8sZs6ybZbbqCa8FRnOo78TdaRPb13npsNyKjIPV9bw9tDtnhi6C0t8Mx6uE5o7j/vxVP1P0Gjsuvp91GGTm93hkljxdW+UU289yBSH+dOGvlo0JmS1Lk8qw76dba8VD+To3/7D1a7g7no4rMM+hJFyqWHocyZ0pvqJ0O9xRm4gxcmfghvyuyun3ZrNJeKgMGRnsuFzCKwh0BFsQzGn76jgk2tT2wk3rZNI5NZuf+mIFRPXFehKBNAcoBj4O2gCW0m/39OaC25Ahu5o6RLMjj+CB/CAKiPIbfysDvZ1i57Y0eFgKs34BHKuXfpZm/fyZi/krAgMBAAECggEAEGYwuWK1/P2lCHf5+BSbe49R9ZkrryUUUYR82ypEDo4Eq3dQ9iDvgu0P4/XJuqcZHvZoAismlNIBrxyMuvmjGqddrApKShpBNKEgwWWGoRPWJsOblH90r78Pa6UjOjHfFkwyF09DdnIV1KxnXqesRhbCBV2hYGItcuZGc6F7lo1hdrlMJ9hl79Q/w/Fgo8ENqnbudKHigYZry/xiCMT9vdtsIdHmNdL3RUtpaDc3zhCjcLYXAOMdoXuurGqnsix+Cl6YPmZbMtQeN6G5w6pZc5U/pDQH7gwqElAFAxzNJxsqcaTnabLmR9d2NaX7K6+bDwIpZTijQkYY10TBC9cPYQKBgQDWtK6hoGSUQ948uynha2plObIrje5sgq4r9aKToe/RjAGW8UQJrUNT+2UnBQ8TOazc8RSB9fIbZZROD0cUvzrIyFUTesRyJLLNzeGiW2KO4bJwioLfgCyQlWh+RU8T2Nl8M6lUe+dytvXjiyXXWFu8p7Inj+X+5eCU+RqDYaliswKBgQDD4caAdifRmqPrfuuQMHtQswRdeNDw1ue/gTjY97MpvlmPr/PAQTC+wgaoLHEssd+RcbNxXqEus/XSS9rSDercqCAertXjYv2e6Jzm02ub+59j1Zw55vmMt3u76B8iwRJM72U/mvZ/c5vleGzEG1F75pjDBJUesCfItohw0iNrqQKBgH74yVFyDikUXcgik2jo4jnMvg492GM5gREkKaoPGUkd+A6wzaC/Y1K2GCLUPg8Li6v5sjwNG8mR7/ud01Z0pKn6tz1W2/f4tfk5qRcf3hBLbwBZGX5dSX2TrgEGsfY1xqBJ2PjKcZyIkK+pKY7JhS7zKUt2MPjmL0NKcaCCz+47AoGAGUPUu5sB1coxXF2ZepaWQTll1byQjo/ZglzjfTCtvjOcD6ltMh32cJRMEYLx8gbbREI7F+NRvNlfWomIJtG+uklBI1P/qH2LIuTz393jIlJZI6JYrSs6gsjjv7/XzD7E4oF6OLL/Gj9KG1XmCYFQiD+c8oJzzWqBJyVMAelIwkkCgYA19n9c1gbIqRm7BK+BmDl8GOwR4BvxnW8QlnQ/M3sHMth/WimjyB/JU7nkTX7E6KJnD3KuzH79sSHE2xCGQE0Bo4S2N689qK5+yzQ+GD8nPwfVUFNXgHseNcifXTF/aoqFiByCWOPx51R2PC/Kcy+cURgSBlOIuFJNXzbJjsaSBg==';
             const firstname = '';
             const lastname = '';
             const email = 'umangarya336@gmail.com';
@@ -439,8 +439,8 @@
             // Create a form element
             const form = document.createElement('form');
             form.method = 'POST';
-            form.action = 'https://pp57secure.payu.in/_payment';
-            // form.action = 'https://secure.payu.in/_payment';
+            // form.action = 'https://pp57secure.payu.in/_payment';
+            form.action = 'https://secure.payu.in/_payment';
             form.style.display = 'none';
 
 
