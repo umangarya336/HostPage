@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HDFC Intent Trigger</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f6f8;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            padding: 15px 25px;
+            font-size: 18px;
+            background-color: #004c8f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Pay via HDFC Bank App</h2>
+    <button onclick="openHDFCIntent()">Pay Now</button>
+</div>
+
+<script>
+function openHDFCIntent() {
+    var intentUrl = "hdfcbanknb://pay?ver=1.0&mode=INTENT&orgId=IBMB&Tts=2026-02-19T16:33:48+05:30&rId=PPU04605027365600565&expiry=_expiry_&tdataEnc=UFBVMDQ2MDUwMjczNjU2MDA1NjU6MA&sign=MEYCIQDYGxCBa6mH6HXf6kpPl6ytJbGl7u9HJ6xpbTbJEu1V6QIhAKduvJlmspPaL0DK3VVspsMvIN6dszHX/rpEQzgvegYn";
+
+    window.location.href = intentUrl;
+}
+</script>
+
+</body>
+</html>
