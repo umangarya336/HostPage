@@ -2,30 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HDFC Intent Trigger</title>
+    <title>Intent URL Launcher</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <style>
         body {
             font-family: Arial, sans-serif;
+            background: #f4f6f8;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f6f8;
-            margin: 0;
         }
+
         .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
             text-align: center;
         }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
         button {
-            padding: 15px 25px;
-            font-size: 18px;
+            padding: 12px 20px;
+            font-size: 16px;
             background-color: #004c8f;
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
+            width: 100%;
         }
+
         button:hover {
             background-color: #003366;
         }
@@ -34,14 +53,28 @@
 <body>
 
 <div class="container">
-    <h2>Pay via HDFC Bank App</h2>
-    <button onclick="openHDFCIntent()">Pay Now</button>
+    <h3>Intent URL Launcher</h3>
+
+    <input 
+        type="text" 
+        id="intentInput" 
+        placeholder="Enter intent URL here"
+        value="hdfcbanknb://pay?ver=1.0&mode=INTENT&orgId=IBMB&Tts=2026-02-19T16:33:48+05:30&rId=PPU04605027365600565&expiry=_expiry_&tdataEnc=UFBVMDQ2MDUwMjczNjU2MDA1NjU6MA&sign=MEYCIQDYGxCBa6mH6HXf6kpPl6ytJbGl7u9HJ6xpbTbJEu1V6QIhAKduvJlmspPaL0DK3VVspsMvIN6dszHX/rpEQzgvegYn"
+    />
+
+    <button onclick="launchIntent()">Launch Intent</button>
 </div>
 
 <script>
-function openHDFCIntent() {
-    var intentUrl = "hdfcbanknb://pay?ver=1.0&mode=INTENT&orgId=IBMB&Tts=2026-02-19T16:33:48+05:30&rId=PPU04605027365600565&expiry=_expiry_&tdataEnc=UFBVMDQ2MDUwMjczNjU2MDA1NjU6MA&sign=MEYCIQDYGxCBa6mH6HXf6kpPl6ytJbGl7u9HJ6xpbTbJEu1V6QIhAKduvJlmspPaL0DK3VVspsMvIN6dszHX/rpEQzgvegYn";
+function launchIntent() {
+    var intentUrl = document.getElementById("intentInput").value.trim();
 
+    if (!intentUrl) {
+        alert("Please enter intent URL");
+        return;
+    }
+
+    // Trigger intent
     window.location.href = intentUrl;
 }
 </script>
